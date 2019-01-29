@@ -56,7 +56,45 @@ public class Main
 				
 				// case ska hantera listan för spanska kursen
 				case 1:
+					ClassInstructions();
+					boolean spklar = false;
+					while(!spklar) 
+					{
+						
+						
 					System.out.println("\n Spanska");
+					int spchoice = 0;
+					spchoice = scan.nextInt();
+					scan.nextLine();
+					
+					switch (spchoice) 
+					{
+					
+					case 1:
+						ClassInstructions();
+						break;
+					case 2:
+						spanska.printClassSpanska();
+						break;
+					case 3:
+						addStudentSpanska();
+						break;
+					case 4:
+						modifyStudentSpanska();
+						break;
+					case 5:
+						removeStudentSpanska();
+						break;
+					case 6:
+						searchForStudentSpanska();
+						break;
+					case 0:
+						generalInstructions();
+						spklar = true;
+						break;
+					}
+					
+					}
 					break;
 					
 					
@@ -101,7 +139,7 @@ public class Main
 						searchForStudentSvenska();
 						break;
 					case 0:
-						ClassInstructions();
+						generalInstructions();
 						svklar = true;
 						break;
 				
@@ -155,7 +193,7 @@ public class Main
 						searchForStudentTyska();
 						break;
 					case 0:
-						ClassInstructions();
+						generalInstructions();
 						tyklar = true;
 						break;
 					
@@ -187,7 +225,10 @@ public class Main
 				
 			
 			
-			
+			case 3:
+				System.out.println("========================================================= \n" + "Still under development please try something else \n" + "========================================================= ");
+				System.out.println("\n Välj: " + "\n 1 för Spanska" + "\n 2 för Svenska" + "\n 3 för Tyska");
+				break;
 				
 			
 			
@@ -228,7 +269,7 @@ public class Main
 	
 	public static void addStudentSvenska()
 	{
-		System.out.println("Please enter the Studens Full name and Email: ");
+		System.out.println("Please enter the Student's Full name: ");
 		svenska.addStudentSvenska(scan.nextLine());
 	}
 	
@@ -275,7 +316,7 @@ public class Main
 	
 	public static void addStudentTyska()
 	{
-		System.out.println("Please enter the Studens Full name and Email: ");
+		System.out.println("Please enter the Student's Full name: ");
 		tyska.addStudenTyska(scan.nextLine());
 	}
 	
@@ -325,26 +366,40 @@ public class Main
 	
 	public static void addStudentSpanska()
 	{
-		System.out.println("Please enter the Studens Full name and Email: ");
-		
+		System.out.println("Please enter the Student's Full name: ");
+		spanska.addStudentSpanska(scan.nextLine());
 	}
 	
 	
 	public static void modifyStudentSpanska()
 	{
-		
+		System.out.println("Students Current info: ");
+		String StudentNo = scan.nextLine();
+		System.out.println("Enter new Info: ");
+		String newStudent = scan.nextLine();
+		spanska.modifyStudentSpanska(StudentNo, newStudent);
 	}
 	
 	
 	public static void removeStudentSpanska()
 	{
-		
+		System.out.println("Enter the data of the student you want to remove: ");
+		String StudentNo = scan.nextLine();
+		spanska.removeStudentSpanska(StudentNo);
 	}
 	
 	
 	public static void searchForStudentSpanska()
 	{
-		
+		System.out.println("(full info please) Student to search for: ");
+		String StudentNo = scan.nextLine();
+		if(spanska.inClassSpanska(StudentNo)) {
+			System.out.println("Found student: " + StudentNo);
+		}
+		else
+		{
+			System.out.println("Could not find any student with that info: " + StudentNo);
+		}
 	}
 	
 	
