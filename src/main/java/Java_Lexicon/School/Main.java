@@ -229,6 +229,11 @@ public class Main
 				System.out.println("========================================================= \n" + "Still under development please try something else \n" + "========================================================= ");
 				System.out.println("\n Välj: " + "\n 1 för Spanska" + "\n 2 för Svenska" + "\n 3 för Tyska");
 				break;
+			case 4:
+				System.out.println(" this program can add Students to a class and see how many students there is in a class");
+				
+				System.out.println(" but it can not see which classes a student is taking");
+				break;
 				
 			
 			
@@ -248,7 +253,7 @@ public class Main
 		System.out.println("\n 1 - To view the General Instructions");
 		System.out.println("\n 2 - To chose a Class and view it's options");
 		System.out.println("\n 3 - To view the list of studens and view its options");
-
+		System.out.println("\n 4 - To see what this program can do");
 		System.out.println("\n 0 - To exit the program");
 	}
 	
